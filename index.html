@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>William Atticks – Resume</title>
+<script>
+  // Send visitors straight to the resume PDF (works with either file name).
+  (async function () {
+    for (const name of ["resume.pdf", "resumevF.pdf"]) {
+      try {
+        const r = await fetch(name, { method: "HEAD" });
+        if (r.ok) { location.replace(name); return; }
+      } catch (e) {}
+    }
+    document.getElementById("msg").textContent = "Resume not found.";
+  })();
+</script>
+<style>
+  body { font-family: -apple-system, Helvetica, Arial, sans-serif; display: flex; min-height: 100vh; margin: 0; align-items: center; justify-content: center; color: #333; }
+  a { color: #a51417; }
+</style>
+</head>
+<body>
+  <p id="msg">Opening resume… If nothing happens, <a href="resume.pdf">click here</a>.</p>
+</body>
+</html>
