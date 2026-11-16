@@ -7,7 +7,7 @@
 <script>
   // Send visitors straight to the resume PDF (works with either file name).
   (async function () {
-    for (const name of ["resume.pdf", "resumevF.pdf"]) {
+    for (const name of ["resume.pdf", "atticks-resume.pdf"]) {
       try {
         const r = await fetch(name, { method: "HEAD" });
         if (r.ok) { location.replace(name); return; }
